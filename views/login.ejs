@@ -1,30 +1,32 @@
 <% include partials/header %>
 <div class="container">
     <div class="row">
-         <div style="width:30% ; margin: 40px auto;">
-          <h3>LOG IN!</h3>  
+         <div style="width:70% ; margin: 40px auto;" align="center">
+          <p style="font-size: 50px">Welcome to Etihaad.</p>
+			<p style="font-size: 40px">Because you must look before you leave</p>
+			<p style="font-size: 40px">Login!</p>
           </div>
     <div style="width:30% ; margin: 0 auto;">
     
     <form action="/login" method="POST" class="form-horizontal">
     <div class="form-group">
-         <label for="username"  class="col-sm-3 control-label">Username:</label>
+         <label for="username"  class="col-sm-3 control-label" style="font-size:30px">Username:</label>
            <div class="col-sm-9 ">
-             <input type="text" placeholder="Enter username" name="username">
+             <input type="text" placeholder="Enter username" name="username" style="font-size:30px; font-family:geogia">
              </div>
     </div>
 
    
-     <div class="form-group">
-         <label for="password" class="col-sm-3 control-label">Password:</label>
+     <div class="form-group" style="margin: 10px auto">
+         <label for="password" class="col-sm-3 control-label" style="font-size:30px">Password:</label>
             <div class="col-sm-9 ">
-            <input type="password" placeholder="Enter password" name="password">
+            <input type="password" placeholder="Enter password" name="password" style="font-size:30px; font-family:geogia">
             </div>
     </div>
      
      <div class="form-group ">
            <div class="col-sm-offset-3 col-sm-9">
-        <button class="btn  btn-primary "> Submit</button>
+        <button class="btn  btn-primary " style="width: 90%; font-size: 30px; font-family:geogia; background-color: black; color: white"> Submit</button>
         </div>
     </div>
 </form>
