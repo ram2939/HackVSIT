@@ -60,6 +60,30 @@ app.get("/getCities", function(req,res) {
 app.post("/editReport", function(req,res) {
 	console.log(req.body);
 	var city = req.body.city;
+	var parsedData;
+	var found = 0;
+	const c = fs.readFileSync(path.resolve(__dirname, "data/crime.csv"), 'utf8');
+	papa.parse(c,{header: true,worker: true, complete: function(results, file) {
+		parsedData = results.data;
+	}});
+	var i=0;
+	while(i<parsedData.length) {
+		if(parsedData[i]["nm_pol"] == city) {
+			requiredIndex = i;
+			var x = parseFloat(parsedData[i]["totalcrime"]);
+			parsedData[i]["totalcrime"] = ++x;
+			found = 1;
+			const unparsed = papa.unparse(parsedData,{header: true,worker: true});
+			fs.writeFileSync(path.resolve(__dirname, "data/crime.csv"),unparsed, 'utf8');
+			break;
+		}
+		i++;
+	}
+	if(found==0) {
+		res.status(404).json({ "result": "Error: city not found." });
+	} else {
+		res.json({"result":"success"});
+	}
 });
 
 app.listen(3000, function(){
