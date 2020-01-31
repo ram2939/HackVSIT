@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var passport=require("passport");
 var methodOverride= require("method-override");
 var path = require('path');
+const papa = require('papaparse');
+const fs = require('fs');
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -33,6 +35,25 @@ app.get("/maps", function(req, res){
 
 app.get("/report", function(req, res){
 	res.sendFile(path.join(__dirname + '/Report.html'));
+});
+
+app.get("/getCities", function(req,res) {
+	var parsedData;
+	var cityNames = [];
+	const c = fs.readFileSync(path.resolve(__dirname, "data/crime.csv"), 'utf8');
+	papa.parse(c,{header: false,worker: true, complete: function(results, file) {
+		parsedData = results.data;
+	}});
+	var i=1;
+	while(i<parsedData.length) {
+		cityNames.push(parsedData[i][0]);
+		i++;
+	}
+	res.json({
+		"citys": cityNames
+	});
+
+
 });
 
 app.listen(3000, function(){
