@@ -50,7 +50,7 @@ app.get("/getCities", function(req,res) {
 		i++;
 	}
 	res.json({
-		"citys": cityNames
+		"cities": cityNames
 	});
 
 
