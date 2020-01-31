@@ -36,7 +36,7 @@
 
     </div></center>
     <div class="container">
-    <form class="form-inline">
+    <form class="form-inline" action="#" onsubmit="sendData(); return false">
       <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
         <option title='nm_pol' value='nm_pol' selected='selected'>Select Location</option>
         <option title='CHITRANJAN PARK' value='CHITRANJAN PARK'>CHITRANJAN PARK</option>
@@ -228,6 +228,29 @@
   <!-- Bootstrap core JavaScript -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    function sendData() {
+      var e = document.getElementById("inlineFormCustomSelectPref");
+      var cityName = e.options[e.selectedIndex].value;
+      const url = "https://localhost:3000/editReport";
+      const data = {
+        "city": cityName
+      };
+      console.log(cityName);
+      axios({method: 'post', url: url, data: data}).then(
+          
+        ).catch(err=>console.log(err));
+        thankyou();
+      
+    }
+
+    function thankyou() {
+      alert("Thank you! for making Delhi a safer place");
+      window.location.replace("https://192.168.24.47:3000/");
+    }
+    
+  </script>
 
 </body>
 
