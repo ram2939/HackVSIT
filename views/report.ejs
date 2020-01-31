@@ -225,13 +225,13 @@
     function sendData() {
       var e = document.getElementById("inlineFormCustomSelectPref");
       var cityName = e.options[e.selectedIndex].value;
-      const url = "https://localhost:3000/editReport";
+      const url = "https://192.168.24.47:3000/editReport";
       const data = {
         "city": cityName
       };
       console.log(cityName);
       axios({method: 'post', url: url, data: data}).then(
-          
+          data=>console.log(data)
         ).catch(err=>console.log(err));
         thankyou();
       

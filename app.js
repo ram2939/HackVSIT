@@ -83,6 +83,7 @@ app.post("/editReport", function(req,res) {
 	if(found==0) {
 		res.status(404).json({ "result": "Error: city not found." });
 	} else {
+		console.log("Changed rate of "+city);
 		res.json({"result":"success"});
 	}
 });
