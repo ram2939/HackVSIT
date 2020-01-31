@@ -1,37 +1,99 @@
-<% include partials/header %>
-<div class="container">
-    <div class="row">
-         <div style="width:70% ; margin: 40px auto;" align="center">
-          <p style="font-size: 50px">Welcome to Etihaad.</p>
-			<p style="font-size: 40px">Because you must look before you leave</p>
-			<p style="font-size: 40px">Login!</p>
-          </div>
-    <div style="width:30% ; margin: 0 auto;">
-    
-    <form action="/login" method="POST" class="form-horizontal">
-    <div class="form-group">
-         <label for="username"  class="col-sm-3 control-label" style="font-size:30px">Username:</label>
-           <div class="col-sm-9 ">
-             <input type="text" placeholder="Enter username" name="username" style="font-size:30px; font-family:geogia">
-             </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PlanIT</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  
+
+</head>
+
+<body>
+
+
+  <!-- Page Content -->
+<center>
+    <div class="jumbotron">
+      <h1 class="display-4">PlanIT</h1>
+      <p class="lead">Plan your way ahead!</p>
+      <hr class="my-4">
+      <p>It uses utility classes for aphy and spacing to space content out within the larger container.</p>
+
     </div>
 
-   
-     <div class="form-group" style="margin: 10px auto">
-         <label for="password" class="col-sm-3 control-label" style="font-size:30px">Password:</label>
-            <div class="col-sm-9 ">
-            <input type="password" placeholder="Enter password" name="password" style="font-size:30px; font-family:geogia">
-            </div>
-    </div>
-     
-     <div class="form-group ">
-           <div class="col-sm-offset-3 col-sm-9">
-        <button class="btn  btn-primary " style="width: 90%; font-size: 30px; font-family:geogia; background-color: black; color: white"> Submit</button>
-        </div>
-    </div>
-</form>
-</div>
-</div>
-</div>
+    <form class="form-inline">
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option title='CHITRANJAN PARK' value='CHITRANJAN PARK'>CHITRANJAN PARK</option>
+	      <option title='DABRI' value='DABRI'>DABRI</option>
+	      <option title='MALVIYA NAGAR' value='MALVIYA NAGAR'>MALVIYA NAGAR</option>
+	      <option title='CHANDNI MAHAL' value='CHANDNI MAHAL'>CHANDNI MAHAL</option>
+	      <option title='MODEL TOWN' value='MODEL TOWN'>MODEL TOWN</option>
+	      <option title='ANANDVIHAR' value='ANANDVIHAR'>ANANDVIHAR</option>
+	      <option title='KASHMERE GATE' value='KASHMERE GATE'>KASHMERE GATE</option>
+      	<option title='GOVIND PURI' value='GOVIND PURI'>GOVIND PURI</option>
+	      <option title='BINDAPUR' value='BINDAPUR'>BINDAPUR</option>
+	      <option title='NEW FRIENDS COLONY' value='NEW FRIENDS COLONY'>NEW FRIENDS COLONY</option>
+        <option title='SARITA VIHAR' value='SARITA VIHAR'>SARITA VIHAR</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+        <option title='default' value='default'>default</option>
+      </select>
+    
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline">
+        <label class="custom-control-label" for="customControlInline">Remember my preference</label>
+      </div>
+    
+      <button type="submit" class="btn btn-primary my-1">Submit</button>
+    </form>
+
+</center>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
