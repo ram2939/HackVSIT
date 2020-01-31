@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var https = require('https');
 var bodyParser = require('body-parser');
 var passport=require("passport");
 var methodOverride= require("method-override");
@@ -35,7 +36,7 @@ app.get("/maps", function(req, res){
 });
 
 app.get("/report", function(req, res){
-	res.sendFile(path.join(__dirname + '/Report.html'));
+	res.render("report");
 });
 
 app.get("/getCities", function(req,res) {
@@ -86,7 +87,10 @@ app.post("/editReport", function(req,res) {
 	}
 });
 
-app.listen(3000, function(){
-    console.log("Server Started");
-
-});
+https.createServer({
+	key: fs.readFileSync('server.key'),
+	cert: fs.readFileSync('server.cert')
+  }, app)
+  .listen(3000, function () {
+	console.log("Server Started. Live at: https://localhost:3000/");
+  });
