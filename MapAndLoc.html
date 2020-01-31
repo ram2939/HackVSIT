@@ -73,14 +73,18 @@
               <hr class="my-4">
               <h3>It is always better to plan your journey before you go out, courtesy Delhi- A city of mishappenings</h3><br>
               <h1>||नज़र हटी दुर्घटना घटी||</h1>
+              <p class="lead" style="margin-top: 10vh;"></p>
+              <a class="btn btn-primary btn-lg" href="/report" role="button">Nearest Police Station</a>
+    </p>
   	</div></center>>
     <input id="origin-input" class="controls" type="text"
         placeholder="Enter an origin location">
 
     <input id="destination-input" class="controls" type="text"
         placeholder="Enter a destination location">
+        <br>
 
-    <div id="mode-selector" class="controls">
+    <div id="mode-selector" class="controls container">
       <input type="radio" name="type" id="changemode-walking" checked="checked">
       <label for="changemode-walking">Walking</label>
 
@@ -389,6 +393,7 @@ var routes = response.routes;
         navigator.geolocation.getCurrentPosition(initMap);
       });
     </script>
-    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

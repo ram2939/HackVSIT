@@ -39,6 +39,10 @@ app.get("/report", function(req, res){
 	res.render("report");
 });
 
+app.get("/police", function(req, res){
+	res.render("police");
+});
+
 app.get("/getCities", function(req,res) {
 	var parsedData;
 	var cityNames = [];
