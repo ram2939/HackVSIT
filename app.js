@@ -7,6 +7,7 @@ var path = require('path');
 const papa = require('papaparse');
 const fs = require('fs');
 
+app.use(express.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -41,12 +42,12 @@ app.get("/getCities", function(req,res) {
 	var parsedData;
 	var cityNames = [];
 	const c = fs.readFileSync(path.resolve(__dirname, "data/crime.csv"), 'utf8');
-	papa.parse(c,{header: false,worker: true, complete: function(results, file) {
+	papa.parse(c,{header: true,worker: true, complete: function(results, file) {
 		parsedData = results.data;
 	}});
-	var i=1;
+	var i=0;
 	while(i<parsedData.length) {
-		cityNames.push(parsedData[i][0]);
+		cityNames.push(parsedData[i]['nm_pol']);
 		i++;
 	}
 	res.json({
@@ -54,6 +55,11 @@ app.get("/getCities", function(req,res) {
 	});
 
 
+});
+
+app.post("/editReport", function(req,res) {
+	console.log(req.body);
+	var city = req.body.city;
 });
 
 app.listen(3000, function(){
