@@ -31,6 +31,10 @@ app.get("/maps", function(req, res){
 	res.sendFile(path.join(__dirname + '/MapAndLoc.html'));
 });
 
+app.get("/report", function(req, res){
+	res.sendFile(path.join(__dirname + '/Report.html'));
+});
+
 app.listen(3000, function(){
     console.log("Ehtihaad Bartein ~(^_^)~");
 
