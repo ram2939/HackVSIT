@@ -36,6 +36,6 @@ app.get("/report", function(req, res){
 });
 
 app.listen(3000, function(){
-    console.log("Ehtihaad Bartein ~(^_^)~");
+    console.log("Server Started");
 
 });
