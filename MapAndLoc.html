@@ -351,7 +351,7 @@ dindex[k]+=4;
  	 duration = "duration"+k,
  	 distance = "distance"+k,
  	 safetyi = "safetyi"+k;
- div.innerHTML = '<div class="card" style="font-size:20px"><div class="card-body"><ul class="list-group"><li class="list-group-item" id='+colour+'></li><li class="list-group-item" id='+duration+'></li><li class="list-group-item" id='+distance+'></li><li class="list-group-item" id='+safetyi+'></li></ul></div></div>';
+ div.innerHTML = '<div class="card" style="font-size:20px"><div class="card-body"><ul class="list-group" type="none"><br><li class="list-group-item" id='+colour+'></li><br><li class="list-group-item" id='+duration+'></li><br><li class="list-group-item" id='+distance+'></li><br><li class="list-group-item" id='+safetyi+'></li><br></ul></div></div>';
   document.getElementById(colour).innerHTML = "Route Number:  " + k + " is colored " +
       (color[k]) ;
    document.getElementById(distance).innerHTML = "Distance  : " +
