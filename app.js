@@ -7,6 +7,7 @@ var methodOverride= require("method-override");
 var path = require('path');
 const papa = require('papaparse');
 const fs = require('fs');
+var nodemailer = require('nodemailer');
 
 app.use(express.json());
 
@@ -90,6 +91,37 @@ app.post("/editReport", function(req,res) {
 		console.log("Changed rate of "+city);
 		res.json({"result":"success"});
 	}
+});
+
+app.post('/sos', function(req,res) {
+	var email = req.body.email;
+	var latitude = req.body.lat;
+	var longitude = req.body.lng;
+	var myMail = "";
+	var transporter = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'youremail@gmail.com',
+		pass: 'yourpassword'
+	}
+	});
+
+	var mailOptions = {
+	from: myMail,
+	to: email,
+	subject: 'SOS! Emergency mail from PlanIT!',
+	text: `This is an auto-generated EMERGENCY message from PlanIT. Someone at the location ${(latitude,longitude)} has requested a help and gave your email.`
+	};
+
+	transporter.sendMail(mailOptions, function(error, info){
+	if (error) {
+		console.log(error);
+		res.status(404).json({ "result": "Error: city not found." });
+	} else {
+		console.log('Email sent: ' + info.response);
+		res.json({"result":"success"});
+	}
+	});
 });
 
 https.createServer({

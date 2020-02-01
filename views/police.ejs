@@ -19,9 +19,43 @@
 </head>
 
 <body>
+  <form>
+    <button action="#" type="submit" onclick="sosBtn(); return false;">SOS</button>
+  </form>
     <div id="map">  </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuxbUz1q62z8WF8L6AJ1eZWxhwFu3UQGA&libraries=places&callback=initMap" async defer ></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuxbUz1q62z8WF8L6AJ1eZWxhwFu3UQGA&libraries=places&callback=initMap" ></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+
+function sosBtn() {
+  navigator.geolocation.getCurrentPosition(function(position) {
+      pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      }
+    }, function() {});
+
+
+
+  var url = "https://192.168.24.47:3000/sos";
+  var data = {
+    "email":"",
+    "lat": pos.lat,
+    "lng":pos.lng,
+  };
+  axios({
+    method: 'post', 
+    url: url, 
+    data: data
+  }).then(
+          data=>console.log(data)
+        ).catch(err=>console.log(err));
+
+}
+
+
+
+
     var map;
 var service;
 var infowindow;
@@ -125,5 +159,6 @@ function createMarker(place) {
   return marker;
 }
 </script>
+
 </body>
 </html>
