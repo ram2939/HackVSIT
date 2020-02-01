@@ -50,7 +50,9 @@ function sosBtn() {
     url: url, 
     data: data
   }).then(
-          data=>console.log(data)
+          data=>console.log(data),
+          alert("Mail Sent"),
+          window.location.replace("https://192.168.24.47:3000/")
         ).catch(err=>console.log(err));
 
 }
