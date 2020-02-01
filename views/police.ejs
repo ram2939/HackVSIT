@@ -5,6 +5,8 @@
   <meta charset="utf-8">
 
   <title>Nearest Police Stations</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <style>
   html,
   body,
@@ -20,7 +22,7 @@
 
 <body>
   <form>
-    <button action="#" type="submit" onclick="sosBtn(); return false;">SOS</button>
+    <button class="btn btn-primary btn-lg" action="#" type="submit" onclick="sosBtn(); return false;">SOS</button>
   </form>
     <div id="map">  </div>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuxbUz1q62z8WF8L6AJ1eZWxhwFu3UQGA&libraries=places&callback=initMap" ></script>
@@ -159,6 +161,8 @@ function createMarker(place) {
   return marker;
 }
 </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
